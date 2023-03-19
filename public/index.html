@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <title>OpenBoard</title>
+</head>
+<body>
+    <div class="options-cont">
+        <i class="fas fa-bars"></i>
+    </div>
+    <div class="tools-cont scale-tools">
+        <i class="fa-solid fa-pencil cl1 pencil"></i>
+        <i class="fa-solid fa-eraser cl2 eraser"></i>
+        <i class="fa-solid fa-download cl3 download"></i>
+        <i class="fa-solid fa-upload cl4 upload"></i>
+        <i class="fa-solid fa-note-sticky cl5 sticky"></i>
+        <i class="fa-solid fa-rotate-right cl6 redo"></i>
+        <i class="fa-solid fa-rotate-left cl6 undo"></i>
+    </div>
+
+
+    <div class="pencil-tool-cont">
+        <div class="pencil-width-cont">
+            <input type="range" min="2" max="10" value="3" class="pencil-width">
+        </div>
+        <div class="pencil-color-cont">
+            <div class="black pencil-color "></div>
+            <div class="red pencil-color mark-outline"></div>
+            <div class="blue pencil-color"></div>
+        </div>
+    </div>
+    <div class="eraser-tool-cont">
+        <input type="range" min="2" max="30" value="5" class="eraser-width">
+    </div>
+
+
+    <!-- <div class="sticky-cont">
+        <div class="header-cont">
+            <div class="minimize"></div>
+            <div class="remove"></div>
+        </div>
+        <div class="note-cont">
+            <textarea name="" id="" cols="30" rows="10"></textarea>
+        </div>
+    </div> -->
+
+
+    <canvas></canvas>
+
+
+    <script src="https://cdn.socket.io/4.6.0/socket.io.min.js" integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+" crossorigin="anonymous"></script>
+
+    <script>
+        let socket=io.connect("http://localhost:3000");
+    </script>
+
+
+
+    <script src="tools.js"></script>
+    <script src="canvas.js"></script>
+</body>
+</html>
